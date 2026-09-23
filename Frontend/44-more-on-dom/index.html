@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random paper</title>
+    <style>
+        *{margin:0;padding:0;box-sizing: border-box;}
+        html,body{background-color: black;height: 100%;width:100%;display: flex;align-items: center;justify-content: center;}
+        #paper{
+            height: 60px;
+            width: 60px;
+            position: absolute;
+        }
+        button{font-weight: 700;
+            padding: 12px 24px;
+            background-color: crimson;
+            z-index: 99;
+            border: none;border-radius: 5px;color:white;cursor:pointer;}
+        button:active{
+            scale:.99;
+        }
+    </style>
+</head>
+<body>
+    <button>Create Paper</button>
+
+    <script>
+        let body=document.body;
+        let btn=document.querySelector('button')
+        btn.addEventListener('click',()=>{
+            let paper=document.createElement('div')
+            paper.id='paper'
+            console.log(paper)
+            let x=Math.random()*80+'%'
+            let y=Math.random()*80+'%'
+            let rotate=Math.floor(Math.random()*360)+'deg'
+            let r=Math.floor(Math.random()*255)
+            let g=Math.floor(Math.random()*255)
+            let b=Math.floor(Math.random()*255)
+            paper.style.left=x
+            paper.style.top=y
+            paper.style.rotate=rotate
+            paper.style.backgroundColor=`rgb(${r},${g},${b})`
+            body.appendChild(paper)
+        })
+    </script>
+</body>
+</html>
