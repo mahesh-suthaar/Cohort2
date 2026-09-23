@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        html{
+            height: 100%;
+            width:100%;
+        }
+        body{
+            height: 100%;
+            width:100%;
+            background-color: black;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    
+
+        main{
+            height: 70%;
+            width:75%;
+            border: 2px solid white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        #fullName{
+            font-size: 10px;
+            font-weight: 500;
+        }
+        h1{
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: auto;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(20, 20, 21);
+            color:white;
+        }
+        button{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 800;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:active{
+            scale:0.99;
+        }
+        #reset{
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            padding:4px 8px;
+        }
+
+        @media (max-width: 400px){
+            button{
+                font-size: 40px;
+            }
+            body{
+                gap:80px;
+            }
+         
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>----</h1>
+        <h1 id="fullName">----</h1>
+    </main>
+    <button>Guess Team</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        let main=document.querySelector('main')
+        let h1=document.querySelector('h1')
+        let btn=document.querySelector('button')
+        let fullName=document.querySelector('#fullName')
+        let reset=document.querySelector('#reset')
+        let ind=0;
+    let teams = [
+        {
+          "team": "Chennai Super Kings",
+          "shortName": "CSK",
+          "primaryColor": "Yellow",
+          "primaryHex": "#FCCA06",
+          "secondaryColor": "Blue",
+          "secondaryHex": "#0081E9"
+        },
+        {
+          "team": "Mumbai Indians",
+          "shortName": "MI",
+          "primaryColor": "Blue",
+          "primaryHex": "#004BA0",
+          "secondaryColor": "Gold",
+          "secondaryHex": "#D1AB3E"
+        },
+        {
+          "team": "Royal Challengers Bengaluru",
+          "shortName": "RCB",
+          "primaryColor": "Red",
+          "primaryHex": "#EC1C24",
+          "secondaryColor": "Dark Blue",
+          "secondaryHex": "#002A5C"
+        },
+        {
+          "team": "Kolkata Knight Riders",
+          "shortName": "KKR",
+          "primaryColor": "Purple",
+          "primaryHex": "#3A225D",
+          "secondaryColor": "Gold",
+          "secondaryHex": "#F7D54A"
+        },
+        {
+          "team": "Delhi Capitals",
+          "shortName": "DC",
+          "primaryColor": "Blue",
+          "primaryHex": "#172F60",
+          "secondaryColor": "Red",
+          "secondaryHex": "#EF1B23"
+        },
+        {
+          "team": "Rajasthan Royals",
+          "shortName": "RR",
+          "primaryColor": "Pink",
+          "primaryHex": "#EA1A85",
+          "secondaryColor": "Blue",
+          "secondaryHex": "#001D42"
+        },
+        {
+          "team": "Sunrisers Hyderabad",
+          "shortName": "SRH",
+          "primaryColor": "Orange",
+          "primaryHex": "#FF8225",
+          "secondaryColor": "Black",
+          "secondaryHex": "#000000"
+        },
+        {
+          "team": "Punjab Kings",
+          "shortName": "PBKS",
+          "primaryColor": "Red",
+          "primaryHex": "#DD1D21",
+          "secondaryColor": "Silver",
+          "secondaryHex": "#A7A9AC"
+        },
+        {
+          "team": "Gujarat Titans",
+          "shortName": "GT",
+          "primaryColor": "Navy Blue",
+          "primaryHex": "#1B2133",
+          "secondaryColor": "Gold",
+          "secondaryHex": "#E3C672"
+        },
+        {
+          "team": "Lucknow Super Giants",
+          "shortName": "LSG",
+          "primaryColor": "Dark Blue",
+          "primaryHex": "#002B49",
+          "secondaryColor": "Orange",
+          "secondaryHex": "#FF5500"
+        }
+    ]
+
+    btn.addEventListener('click',()=>{
+       let winner=Math.floor(Math.random()*teams.length);
+    //  if(ind===teams.length-1){ind=0}
+    //    let winner=ind
+        
+        main.style.backgroundColor=`${teams[winner]["primaryHex"]}`
+      h1.style.backgroundColor=`${teams[winner]["secondaryHex"]}`
+      h1.textContent=`${teams[winner]["shortName"]}`
+        fullName.textContent=teams[winner]["team"]
+        fullName.style.backgroundColor=teams[winner]["secondaryHex"]
+        ind++
+    })
+
+    reset.addEventListener('click',()=>{
+        location.reload()
+    })
+    </script>
+   
+</body>
+</html>
