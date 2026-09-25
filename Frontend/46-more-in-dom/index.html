@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More in DOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+        html,body{
+        height:100%;
+        width:100%;
+        }
+        body{
+            display: flex;
+            background-color: black;
+        }
+
+        #card{
+            height:300px;
+            width:240px;
+            background-color: beige;
+            border-radius: 10px;
+            margin:auto;
+            padding: 15px;
+        }
+        h2{
+            text-align: center;
+            margin-top:10px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        #profile{
+            height: 85%;
+            width: 100%;
+            position:relative;
+        }
+        #heartContainer{
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top: 0;
+            left:0;
+            border-radius: 10px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+        .ri-heart-fill{
+            position: absolute;
+            font-size: 40px;
+            opacity:0;
+            color: transparent;
+            background: linear-gradient(red,blue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* transition:all cubic-bezier(0.19, 1, 0.22, 1) .4s; */
+            pointer-events: none;}
+
+            .ri-heart-fill.pop{
+                animation: heartPop .9s ease-in-out  ;
+            }
+
+        @keyframes heartPop {
+            0%   { opacity: 0; transform: scale(0.4) rotate(-8deg); }
+            35%  { opacity: 1; transform: scale(1.15) rotate(4deg); }
+            55%  { transform: scale(0.95) rotate(0deg); }
+            75%  { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="card">
+        <div id="profile">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9kZWx8ZW58MHx8MHx8fDA%3D" alt="">
+            <div id="heartContainer">
+                <i class="ri-heart-fill"></i>
+            </div>
+            
+        </div>
+        <h2>Shreya Sharma </h2>
+        
+    </div>
+
+
+    <script>
+        let img=document.querySelector('img')
+        let heart=document.querySelector('.ri-heart-fill')
+        img.addEventListener('dblclick',function(){
+
+            heart.classList.remove('pop');
+
+            setTimeout(() => {
+                heart.classList.add('pop');
+            }, 1);
+            
+            
+        })
+    </script>
+</body>
+</html>
