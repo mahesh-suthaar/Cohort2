@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User cards</title>
+
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        html,body{
+        height:100%;
+        width:100%;
+        }
+        main{
+            height: auto;
+            width:100%;
+            background-color: black;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap:15px;
+            overflow:auto;
+        }
+
+
+        #card{
+            border-radius: 15px;
+            height: 300px;
+            width:200px;
+            background-color: rgb(18, 18, 18);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            cursor:pointer;
+            border: 1px solid rgb(117, 116, 116);
+        }
+        #profile{
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border:1px solid rgb(82, 129, 248);
+        }
+         #profile img{
+            height: 100%;
+            width:100%;
+            object-fit: cover;
+
+         }
+         #name{
+            margin-top: 8px;
+            font-size: 18px;
+            color: beige;
+         }
+         #profession{
+            color: rgb(82, 129, 248);
+            font-size: 14px;
+            font-weight: 500;
+         }
+         #description{
+            color:beige;
+            margin-top: 10px;
+            text-align: center;
+         }
+    </style>
+</head>
+<body>
+    <main></main>
+
+    <script>
+        let main=document.querySelector('main');
+        let sum=''        
+        const profiles = [
+            {
+            profileImage: "https://randomuser.me/api/portraits/men/32.jpg",
+            username: "jake_dev",
+            profession: "Frontend Developer",
+            description: "Building sleek, responsive UIs with React and a love for clean code."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/women/44.jpg",
+               username: "sara_designs",
+               profession: "UI/UX Designer",
+               description: "Crafting intuitive user experiences one wireframe at a time."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/men/15.jpg",
+               username: "arjun_codes",
+               profession: "Backend Engineer",
+               description: "Scaling APIs and databases for high-traffic applications."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/women/68.jpg",
+               username: "priya.writes",
+               profession: "Content Strategist",
+               description: "Turning complex ideas into stories people actually want to read."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/men/77.jpg",
+               username: "carlos_data",
+               profession: "Data Scientist",
+               description: "Finding patterns in chaos using Python, ML, and lots of coffee."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/women/21.jpg",
+               username: "emily.codes",
+               profession: "Full Stack Developer",
+               description: "From database to deployment — I build the whole thing."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/men/50.jpg",
+               username: "raj_devops",
+               profession: "DevOps Engineer",
+               description: "Automating pipelines so teams can ship faster and sleep better."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/women/12.jpg",
+               username: "lena_pm",
+               profession: "Product Manager",
+               description: "Bridging the gap between users, engineers, and business goals."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/men/90.jpg",
+               username: "mike_mobile",
+               profession: "Mobile App Developer",
+               description: "Native and cross-platform apps that feel right on every device."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/women/33.jpg",
+               username: "ananya.ai",
+               profession: "Machine Learning Engineer",
+               description: "Training models that learn faster than most humans I know."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/men/28.jpg",
+               username: "tom_security",
+               profession: "Cybersecurity Analyst",
+               description: "Hunting vulnerabilities before the bad guys do."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/women/56.jpg",
+               username: "nisha_qa",
+               profession: "QA Engineer",
+               description: "Breaking software professionally so users never have to."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/men/61.jpg",
+               username: "daniel.cloud",
+               profession: "Cloud Architect",
+               description: "Designing infrastructure that scales without breaking the bank."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/women/8.jpg",
+               username: "fatima_writes",
+               profession: "Technical Writer",
+               description: "Making documentation people actually enjoy reading."
+             },
+             {
+               profileImage: "https://randomuser.me/api/portraits/men/40.jpg",
+               username: "vikram.startup",
+               profession: "Startup Founder",
+               description: "Building something from nothing, one late night at a time."
+             }
+];
+    
+    profiles.forEach((elem)=>{
+        let name=elem.username
+        .toLowerCase()
+        .split("_")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+
+        sum= sum+`    <div id="card">
+        <div id="profile">
+            <img src="${elem.profileImage}" alt="">
+        </div>
+        <h2 id="name">${name}</h2>
+        <h4 id="profession">${elem.profession}</h4>
+        <p id="description">${elem.description}</p>
+    </div>`
+    
+        
+    })
+    function renderData(){
+       main.innerHTML=sum
+    }
+    renderData()
+    </script>
+</body>
+</html>
