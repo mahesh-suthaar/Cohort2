@@ -1,0 +1,131 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+html,body{
+height:100%;
+width:100%;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+
+}
+
+main section{
+    height: 100%;
+    width: 360px;
+    margin: auto;
+}
+section .allReels{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    /* snapping feature*/
+    scroll-snap-type: y mandatory;
+}
+
+section .allReels::-webkit-scrollbar{
+    display: none;
+}
+.allReels .reel{
+    border-radius: 8px;
+    border: 1px solid gray;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    /*snapping feature*/
+    scroll-snap-align: start;
+}
+
+.reel img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* object-position: center; */
+}
+
+.reel .bottom{
+    padding: 10px;
+    position:absolute;
+    bottom:0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    color: white;
+    background: linear-gradient(to bottom, transparent,black);
+}
+
+.bottom .user{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: white;
+}
+
+.user .profile{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.user .username{
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.user button.follow{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reel .right{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 25px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+}
+
+.like,.comment,.share{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right i{
+    cursor: pointer;
+}
+.ri-heart-fill{
+    color:red;
+}
+.ri-chat-3-line{
+    display: inline-block;
+    transform: rotateY(180deg);
+}
+.ri-more-2-line{
+    display: inline-block;
+    transform: rotateZ(90deg);
+}
+.right h5{
+    font-weight: 100;
+    font-size: 15px;
+}
