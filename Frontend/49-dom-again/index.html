@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Remove friends</title>
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+        html,body{
+        height:100%;
+        width:100%;
+        background-color: black;
+        }
+        #elem{
+            padding: 10px 20px;
+            background-color: rgb(57, 57, 57);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            color:white;
+            margin-bottom: 10px;
+            font-size: 35px;
+        }
+
+        #elem:nth-child(1){
+            margin-top: 10px;
+        }
+
+        button{
+            background-color: blue;
+            padding: 5px;
+            color:white;
+            font-weight: 600;
+            font-size: 35px;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div id="elem">
+            <h2>Sarthak Sharma</h2>
+            <button>Add Friend</button>
+        </div>
+    </main>
+    <main>
+        <div id="elem">
+            <h2>Sarthak Sharma</h2>
+            <button>Add Friend</button>
+        </div>
+    </main>
+    <main>
+        <div id="elem">
+            <h2>Sarthak Sharma</h2>
+            <button>Add Friend</button>
+        </div>
+    </main>
+    <main>
+        <div id="elem">
+            <h2>Sarthak Sharma</h2>
+            <button>Add Friend</button>
+        </div>
+    </main>
+
+
+    <script>
+        let allElems=document.querySelectorAll('#elem')
+        allElems.forEach(function(elem){
+            elem.childNodes[3].addEventListener('click',function(){
+                console.log();
+                if(elem.childNodes[3].innerHTML==='Add Friend'){
+                    console.log('sahi');
+                    elem.childNodes[3].innerHTML='Remove Friend'
+                }
+                else{
+                    elem.childNodes[3].innerHTML='Add Friend'
+                }
+            })
+            
+        })
+    </script>
+</body>
+</html>
