@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+        html,body{
+        height:100%;
+        width:100%;
+        background-color: black;
+        }
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            font-family: monospace;
+            font-size: 35px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the mainframe user</h1>
+
+    <script>
+        // let h1=document.querySelector('h1')
+        // let h1array=h1.textContent.split('')
+        // let abcarray='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+        // let id;
+        // let iteration=0;
+        // h1.addEventListener('mouseenter',()=>{
+        //     iteration=0;
+        //     id=setInterval(() => {
+        //         let randomarray=h1array.map((char, index)=>{
+        //             if(index<iteration){
+        //                 return char
+        //             }
+        //         return abcarray[Math.floor(Math.random()*abcarray.length)]
+        //         })
+        //         let randomstring=randomarray.join('')
+        //         if (iteration>=h1array.length){clearInterval(id)
+        //         h1.textContent=randomstring}
+
+        //         iteration+=1
+        //     }, 500);
+
+            
+        // })
+
+
+        
+        
+        
+        let h1=document.querySelector('h1')
+        let abc='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        let text = h1.textContent
+        let iteration=0
+
+        h1.addEventListener('mouseenter',()=>{
+            setInterval(()=>{
+            let string=text.split('').map((char, index)=>{
+                if(index<iteration) return char
+                return abc.split('')[Math.floor(Math.random()*abc.length)]
+            }).join('')
+            iteration+=0.25
+            h1.innerText=string},50)
+        })
+    </script>
+</body>
+</html>
