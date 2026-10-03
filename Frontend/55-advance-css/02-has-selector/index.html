@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+        html,body{
+        height:100%;
+        width:100%;
+        background-color:black;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .box{
+            height: 50px;
+            width: 50px;
+            border-radius: 5px;
+        }
+        #red{
+            background: red;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #green{
+            background-color: green;
+        }
+        h2{
+            background: white;
+            padding:20px;
+            border-radius: 5px;
+        }
+
+        /* :has is the parent selector */
+        body:has(#red:hover) h2{
+            background-color:red;
+        }
+        body:has(#blue:hover) h2{
+            background-color:blue;
+        }
+        body:has(#green:hover) h2{
+            background-color:green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="red"></div>
+    <div class="box" id="blue"></div>
+    <div class="box" id="green"></div>
+    <h2>hello</h2>
+</body>
+</html>

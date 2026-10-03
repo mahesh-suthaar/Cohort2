@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Follow</title>
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+        html,body{
+        height:100%;
+        width:100%;
+        background-color: black;
+        }
+
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            anchor-name: --thisOK;
+        }
+        h2{
+            color: white;
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+        h2:hover{
+            anchor-name: --thisOK;
+        }
+        #dynamicBox{
+            border-radius: 5px;
+            position: absolute;
+            top: anchor(top);
+            left: anchor(left);
+            bottom: anchor(bottom);
+            right: anchor(right);
+            background-color: gray;
+            position-anchor: --thisOK;
+            pointer-events: none;
+            z-index: 0;
+            transition: all ease .4s;
+        }
+    </style>
+</head>
+<body>
+    <h2>Home</h2>
+    <h2>Shop</h2>
+    <h2>Cart</h2>
+    <h2>Contact</h2>
+    <div id="dynamicBox"></div>
+</body>
+</html>
