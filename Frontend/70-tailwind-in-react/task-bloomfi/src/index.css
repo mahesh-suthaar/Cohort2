@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+
+.whatis .heading{
+    color: #2a2545;
+    font-weight: 400;
+}
+.whatis .para{
+    margin-left:150px;
+    color: #0f0a2ba9;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.card .heading{
+    font-size: 25px;
+    font-weight: 100;
+    font-weight: 600;
+    color:whitesmoke;
+
+}
+.card .para{
+    color:rgba(182, 176, 176, 0.795);
+}
+
+.lower .card{
+    background-color: rgb(236, 233, 233);
+    color: black;
+}
+.lower .card .heading{
+    color:rgb(31, 30, 30);
+    
+}
+.lower .card .para{
+    color: rgb(63, 62, 62)
+}
