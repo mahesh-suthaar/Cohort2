@@ -5,3 +5,5 @@ playground/
 03-backend/88-rest-api/folder/node_modules
 03-backend/89-database/folder/node_modules
 03-backend/90-database/folder/node_modules
+03-backend/91-crud-operations/folder/node_modules
+03-backend/91-crud-operations/folder/.env
