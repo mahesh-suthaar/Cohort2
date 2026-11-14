@@ -7,3 +7,5 @@ playground/
 03-backend/90-database/folder/node_modules
 03-backend/91-crud-operations/folder/node_modules
 03-backend/91-crud-operations/folder/.env
+03-backend/92-93-fullstack/folder/backend/node_modules
+03-backend/92-93-fullstack/folder/backend/.env
