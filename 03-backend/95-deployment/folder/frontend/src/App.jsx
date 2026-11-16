@@ -7,7 +7,7 @@ function App() {
   const [editDescription, setEditDescription] = useState("")
 
   function fetchNotes() {
-    axios.get("http://localhost:3000/api/notes")
+    axios.get("https://notes-app-s1jg.onrender.com/api/notes")
       .then((res) => setNotes(res.data.notes))
   }
 
@@ -20,7 +20,7 @@ function App() {
     const title = e.target.title.value
     const description = e.target.description.value
 
-    axios.post("http://localhost:3000/api/notes", { title, description })
+    axios.post("https://notes-app-s1jg.onrender.com/api/notes", { title, description })
       .then(() => {
         fetchNotes()
         e.target.reset()
@@ -28,7 +28,7 @@ function App() {
   }
 
   function deleteNote(noteId) {
-    axios.delete(`http://localhost:3000/api/notes/${noteId}`)
+    axios.delete(`https://notes-app-s1jg.onrender.com/api/notes/${noteId}`)
       .then(() => fetchNotes())
   }
 
@@ -38,7 +38,7 @@ function App() {
   }
 
   function updateNote(noteId) {
-    axios.patch(`http://localhost:3000/api/notes/${noteId}`, {
+    axios.patch(`https://notes-app-s1jg.onrender.com/api/notes/${noteId}`, {
       description: editDescription
     })
       .then(() => {
