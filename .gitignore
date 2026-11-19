@@ -13,3 +13,5 @@ playground/
 03-backend/94-fullstack-deployment/folder/backend/.env
 03-backend/95-deployment/folder/backend/node_modules
 03-backend/95-deployment/folder/backend/.env
+03-backend/97-jwt/node_modules
+03-backend/97-jwt/.env
