@@ -15,3 +15,5 @@ playground/
 03-backend/95-deployment/folder/backend/.env
 03-backend/97-jwt/node_modules
 03-backend/97-jwt/.env
+03-backend/98-bcryptjs/folder/node_modules
+03-backend/98-bcryptjs/folder/.env
