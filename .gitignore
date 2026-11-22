@@ -17,3 +17,5 @@ playground/
 03-backend/97-jwt/.env
 03-backend/98-bcryptjs/folder/node_modules
 03-backend/98-bcryptjs/folder/.env
+03-backend/101-authentication-recorded/node_modules
+03-backend/101-authentication-recorded/.env
